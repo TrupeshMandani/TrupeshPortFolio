@@ -5,8 +5,6 @@ import { slideInFromTop } from "@/utils/motion";
 import { slideInFromLeft } from "@/utils/motion";
 import { slideInFromRight } from "@/utils/motion";
 
-import { useTranslation } from "next-i18next";
-import { useTheme } from "next-themes";
 import { SparklesIcon } from "@heroicons/react/16/solid";
 
 const SkillText = () => {

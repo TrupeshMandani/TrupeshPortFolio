@@ -3,6 +3,7 @@ import {
   Frontend_skill,
   Full_stack,
   Other_skill,
+  Skill_data,
 } from "@/app/constants";
 import { section } from "framer-motion/client";
 import { scale } from "maath/dist/declarations/src/vector2";
@@ -18,6 +19,17 @@ const Skill = () => {
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
     >
       <SkillText />
+      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4 ">
+        {Skill_data.map((image, index) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
+        ))}
+      </div>
       <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4 ">
         {Frontend_skill.map((image, index) => (
           <SkillDataProvider
