@@ -72,7 +72,7 @@ const Herocontent = () => {
         className="w-full h-full flex items-center justify-center"
       >
         <img
-          src="/MyBitmoji.png" // Image source
+          src="/mainIconsdark.svg" // Image source
           alt="work icons" // Image alt text
           height={650}
           width={650}
