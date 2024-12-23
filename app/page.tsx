@@ -1,5 +1,8 @@
 import Encryption from "./components/main/Encryption";
+
+import Footer from "./components/main/Footer";
 import Hero from "./components/main/Hero"; // Importing the Hero component
+import Projects from "./components/main/Projects";
 import Skill from "./components/main/Skill";
 import Herocontent from "./components/sub/HeroContent";
 
@@ -12,6 +15,8 @@ export default function Home() {
         <Hero />
         <Skill />
         <Encryption />
+        <Projects />
+        <Footer />
       </div>
     </main>
   );
