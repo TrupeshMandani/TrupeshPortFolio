@@ -5,8 +5,7 @@ import {
   Other_skill,
   Skill_data,
 } from "@/app/constants";
-import { section } from "framer-motion/client";
-import { scale } from "maath/dist/declarations/src/vector2";
+
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";

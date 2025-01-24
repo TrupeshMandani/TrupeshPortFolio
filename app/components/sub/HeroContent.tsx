@@ -8,6 +8,7 @@ import {
   slideInFromTop,
 } from "@/utils/motion"; // Import animation variants
 import { SparklesIcon } from "@heroicons/react/16/solid"; // Import icon from Heroicons
+import Image from "next/image";
 
 // HeroContent Component
 const Herocontent = () => {
@@ -71,7 +72,7 @@ const Herocontent = () => {
         variants={slideInFromRight(0.8)} // Animation variant for sliding in from the right
         className="w-full h-full flex items-center justify-center"
       >
-        <img
+        <Image
           src="/mainIconsdark.svg" // Image source
           alt="work icons" // Image alt text
           height={650}

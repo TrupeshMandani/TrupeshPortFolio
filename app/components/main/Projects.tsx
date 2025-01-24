@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
-import { Lightformer } from "@react-three/drei";
 
 const Projects = () => {
   return (
