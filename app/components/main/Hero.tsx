@@ -1,5 +1,5 @@
-import React from 'react';
-import Herocontent from '../sub/HeroContent';
+import React from "react";
+import Herocontent from "../sub/HeroContent";
 
 const Hero = () => {
   return (
@@ -9,13 +9,13 @@ const Hero = () => {
         muted
         loop
         playsInline
-        className="rotate-180 absolute top-[-340px] left-0 w-full h-full object-cover"
+        className="rotate-180 absolute top-[-340px] left-0 w-full h-full z-[-1] object-cover"
       >
         <source src="/blackhole.webm" type="video/webm" />
         <source src="/blackhole.mp4" type="video/mp4" /> {/* Fallback format */}
         Your browser does not support the video tag.
       </video>
-      <Herocontent/>
+      <Herocontent />
     </div>
   );
 };
