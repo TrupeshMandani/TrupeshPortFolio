@@ -3,25 +3,104 @@ import ProjectCard from "../sub/ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="flex flex-col item-center justify-center py-20">
-      <h1 className="text-[40px] mx-auto font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to bg-cyan-500 py-20">
+    <div className="flex flex-col items-center justify-center py-5">
+      {/* Title */}
+      <h1 className="text-[40px] mx-auto font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 pt-5 pb-20">
         My Projects
       </h1>
+
+      {/* Projects List */}
       <div className="h-full w-auto flex flex-col md:flex-row gap-10 px-10">
+        {/* Chauffeur Service */}
         <ProjectCard
-          src="/NextWebsite.png"
-          title="modern Next.js Portfolio"
-          description="lorem ipsum sdkfhjasdehkfjasdf bkh sdkhf kjhsdf kshdf sdkfjg"
+          src="/proj1.png"
+          title="Calgary Chauffeur Service"
+          description="A responsive booking website for chauffeur services with advanced search, Google API integration, Square payment gateway, and RESTful APIs for smooth functionality."
+          techStack={[
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+              label: "Next.js",
+            },
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              label: "Tailwind CSS",
+            },
+
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+              label: "MongoDB",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+              label: "REST APIs",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+              label: "Google API",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+              label: "Square API",
+            },
+          ]}
         />
+
+        {/* BookView */}
         <ProjectCard
           src="/CardImage.png"
-          title="modern Next.js Portfolio"
-          description="lorem ipsum sdkfhjasdehkfjasdf bkh sdkhf kjhsdf kshdf sdkfjg"
+          title="BookView"
+          description="A platform to download and purchase books through Amazon. Features Firebase authentication, a real-time Firebase database, Google API, and RESTful APIs for seamless book access."
+          techStack={[
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+              label: "Next.js",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+              label: "Firebase",
+            },
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              label: "Tailwind CSS",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+              label: "REST APIs",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+              label: "Google API",
+            },
+          ]}
         />
+
+        {/* E-commerce Book Store */}
         <ProjectCard
           src="/SpaceWebsite.png"
-          title="modern Next.js Portfolio"
-          description="lorem ipsum sdkfhjasdehkfjasdf bkh sdkhf kjhsdf kshdf sdkfjg"
+          title="E-commerce Book Store"
+          description="A modern MERN-based e-commerce platform with React, Vite, RESTful APIs, and MongoDB integration to provide users a seamless shopping experience."
+          techStack={[
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
+              label: "Vite",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+              label: "React.js",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+              label: "MongoDB",
+            },
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              label: "Tailwind CSS",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+              label: "REST APIs",
+            },
+          ]}
         />
       </div>
     </div>

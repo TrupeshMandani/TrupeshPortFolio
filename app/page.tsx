@@ -1,4 +1,5 @@
-import Encryption from "./components/main/Encryption";
+import Certification from "./components/main/Certification";
+import "devicon/devicon.min.css";
 
 import Footer from "./components/main/Footer";
 import Hero from "./components/main/Hero"; // Importing the Hero component
@@ -13,7 +14,7 @@ export default function Home() {
       <div className="flex flex-col  gap-20">
         <Hero />
         <Skill />
-        <Encryption />
+        <Certification />
         <Projects />
         <Footer />
       </div>
