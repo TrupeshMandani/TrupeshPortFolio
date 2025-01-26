@@ -47,7 +47,7 @@ const Projects = () => {
 
         {/* BookView */}
         <ProjectCard
-          src="/CardImage.png"
+          src="/proj2.png"
           title="BookView"
           description="A platform to download and purchase books through Amazon. Features Firebase authentication, a real-time Firebase database, Google API, and RESTful APIs for seamless book access."
           techStack={[
@@ -76,7 +76,7 @@ const Projects = () => {
 
         {/* E-commerce Book Store */}
         <ProjectCard
-          src="/SpaceWebsite.png"
+          src="/proj3.png"
           title="E-commerce Book Store"
           description="A modern MERN-based e-commerce platform with React, Vite, RESTful APIs, and MongoDB integration to provide users a seamless shopping experience."
           techStack={[
