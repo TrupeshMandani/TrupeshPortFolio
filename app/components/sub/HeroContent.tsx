@@ -1,42 +1,57 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion"; // Import motion for animations
+import { motion } from "framer-motion";
 import {
   slideInFromLeft,
   slideInFromRight,
   slideInFromTop,
-} from "@/utils/motion"; // Import animation variants
-import { SparklesIcon } from "@heroicons/react/16/solid"; // Import icon from Heroicons
+} from "@/utils/motion";
+import { SparklesIcon, SpeakerWaveIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
+
+// Function to Speak Name
+const speakName = () => {
+  const synth = window.speechSynthesis;
+  const utterance = new SpeechSynthesisUtterance("Trupesh Mandani");
+  utterance.lang = "en-US"; // Adjust if needed
+  utterance.rate = 1; // Speech speed
+  synth.speak(utterance);
+};
 
 // HeroContent Component
 const Herocontent = () => {
   return (
     <motion.div
-      initial="hidden" // Initial state for animation
-      animate="visible" // Animate to the visible state
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full"
+      initial="hidden"
+      animate="visible"
+      className="flex flex-row items-center justify-between px-20 mt-40 w-full"
     >
-      {/* Main content container */}
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        {/* Welcome Box */}
+      {/* Left Section: Text Content */}
+      <div className="h-full w-full flex flex-col gap-5 justify-center text-start">
+        {/* Welcome Box with Speaker Button */}
         <motion.div
-          variants={slideInFromTop} // Animation variant for sliding in from the top
-          className="welcome-box py-2 px-7 border border-[#7042f88b] rounded-full max-w-max opacity-[0.9] mt-[-20px]"
+          variants={slideInFromTop}
+          className="welcome-box py-2 px-7 border border-[#7042f88b] rounded-full max-w-max opacity-[0.9] mt-[-20px] flex items-center gap-2"
         >
-          <div className="flex items-center">
-            <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
-            <h1 className="welcome-text text-[13px] text-white">
-              Full-Stack Developer Portfolio
-            </h1>
-          </div>
+          <SparklesIcon className="text-[#b49bff] h-5 w-5" />
+          <h1 className="welcome-text text-[13px] text-white">
+            Full-Stack Developer Portfolio
+          </h1>
+
+          {/* Speaker Button */}
+          <button
+            onClick={speakName}
+            className="ml-3 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition"
+          >
+            <SpeakerWaveIcon className="h-5 w-5 text-white" />
+          </button>
         </motion.div>
 
-        {/* Main Title with Gradient Text */}
+        {/* Main Title */}
         <motion.div
-          variants={slideInFromLeft(0.5)} // Animation variant for sliding in from the left
-          className="flex flex-col gap-6 mt-3 text-6xl font-bold text-white max-w-[600px w-auto h-auto]"
+          variants={slideInFromLeft(0.5)}
+          className="flex flex-col gap-6 mt-3 text-6xl font-bold text-white max-w-[600px]"
         >
           <span>
             Providing
@@ -48,10 +63,10 @@ const Herocontent = () => {
           </span>
         </motion.div>
 
-        {/* Description Paragraph */}
+        {/* Description */}
         <motion.p
-          variants={slideInFromLeft(0.8)} // Animation variant for sliding in from the left
-          className="text-lg text-gray-400 mx-5 max-w-[600px]"
+          variants={slideInFromLeft(0.8)}
+          className="text-lg text-gray-400 max-w-[600px]"
         >
           I am Trupesh Mandani, a software developer with skills in mobile app
           development, web development, and software development. Check out my
@@ -60,21 +75,21 @@ const Herocontent = () => {
 
         {/* Learn More Button */}
         <motion.a
-          variants={slideInFromLeft(1)} // Animation variant for sliding in from the left
+          variants={slideInFromLeft(1)}
           className="py-2 bg-purple-500 bg-opacity-30 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
           Learn More
         </motion.a>
       </div>
 
-      {/* Image Section */}
+      {/* Right Section: Image */}
       <motion.div
-        variants={slideInFromRight(0.8)} // Animation variant for sliding in from the right
-        className="w-full h-full flex items-center justify-center"
+        variants={slideInFromRight(0.8)}
+        className="w-full h-full flex justify-end items-center"
       >
         <Image
-          src="/mainIconsdark.svg" // Image source
-          alt="work icons" // Image alt text
+          src="/mainIconsdark.svg"
+          alt="work icons"
           height={650}
           width={650}
         />

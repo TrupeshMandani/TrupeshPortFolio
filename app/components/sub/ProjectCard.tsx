@@ -22,7 +22,8 @@ const ProjectCard = ({ src, title, description, techStack }: Props) => {
           src={src}
           alt={title}
           layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           className="rounded-t-lg"
         />
       </div>
