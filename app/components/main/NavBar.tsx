@@ -27,21 +27,6 @@ const NavBar = () => {
       {/* Container for the navigation bar */}
       <div className="w-full h-full flex flex-row px-10px m-auto justify-between items-center">
         {/* Logo section */}
-        <a
-          href="#about-me"
-          className="h-auto w-auto flex flex-row items-center"
-        >
-          <Image
-            src="/navlogo.png"
-            alt="logo"
-            width={70}
-            height={70}
-            className="cursor-pointer hover:animate-slowspin"
-          />
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            Webchain Dev
-          </span>
-        </a>
 
         {/* Navigation links section */}
         <div className="justify-center">

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { GripVertical } from "lucide-react"; // Optional: Use an icon or make your own 9-dot SVG
+import { GripVertical } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface DraggableNavBlockProps {
   scrollToSection: (sectionId: string) => void;
@@ -59,12 +60,15 @@ const DraggableNavBlock: React.FC<DraggableNavBlockProps> = ({
   }, [isDragging]);
 
   return (
-    <div
+    <motion.div
       ref={dragRef}
       className="absolute z-50"
       style={{ left: position.x, top: position.y }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: position.y, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="flex flex-row items-center gap-x-6 border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] mt-2 rounded-full text-gray-200 whitespace-nowrap">
+      <div className="flex flex-row items-center gap-x-6 border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] mt-2 rounded-full text-gray-200 whitespace-nowrap shadow-md backdrop-blur-sm">
         {/* Drag Handle Button */}
         <div
           onMouseDown={handleMouseDown}
@@ -100,13 +104,13 @@ const DraggableNavBlock: React.FC<DraggableNavBlockProps> = ({
           Projects
         </button>
         <button
-          onClick={() => scrollToSection("footer")}
+          onClick={() => scrollToSection("contact")}
           className="cursor-pointer"
         >
           Connect Me
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

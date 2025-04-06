@@ -58,29 +58,30 @@ const Herocontent = () => {
           variants={slideInFromLeft(0.5)}
           className="w-1/2 h-full flex flex-col justify-center text-center"
         >
-          <div
-            ref={plateRef}
-            onMouseMove={(e) => handleMouseMove(e, plateRef)}
-            onMouseLeave={() => resetTilt(plateRef)}
-            className="transition-transform duration-150 ease-out will-change-transform py-20 px-10 rounded-xl hover:bg-white/5"
-          >
-            <p className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-wide cursor-default leading-tight pb-10 uppercase flex flex-col gap-4 justify-center items-center select-none">
-              <span className="relative flex hover:tracking-widest transition-all ease-in-out duration-500 cursor-crosshair">
-                {/* Speaker Button on 'h' */}
-                <button
-                  onClick={speakContent}
-                  className="absolute -top-10 right-[-12px] z-10 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition cursor-pointer"
-                  title="Click to speak"
-                >
-                  <SpeakerWaveIcon className="h-5 w-5 text-white pointer-events-none" />
-                </button>
+          <div className="flex-1 flex">
+            <div
+              ref={plateRef}
+              onMouseMove={(e) => handleMouseMove(e, plateRef)}
+              onMouseLeave={() => resetTilt(plateRef)}
+              className=" w-full flex items-center justify-center transition-transform py-40 duration-150 ease-out will-change-transform px-10 rounded-xl hover:bg-white/5 "
+            >
+              <p className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-wide cursor-default leading-tight pb-10 uppercase flex flex-col gap-4 justify-center items-center select-none">
+                <span className="relative flex hover:tracking-widest transition-all ease-in-out duration-500 cursor-crosshair">
+                  <button
+                    onClick={speakContent}
+                    className="absolute -top-10 right-[-12px] z-10 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition cursor-pointer"
+                    title="Click to speak"
+                  >
+                    <SpeakerWaveIcon className="h-5 w-5 text-white pointer-events-none" />
+                  </button>
 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-100">
-                  Trupesh
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-100">
+                    Trupesh
+                  </span>
                 </span>
-              </span>
-              <span className="text-gray-400">Mandani</span>
-            </p>
+                <span className="text-gray-400">Mandani</span>
+              </p>
+            </div>
           </div>
         </motion.div>
 
@@ -107,7 +108,13 @@ const Herocontent = () => {
       </motion.div>
 
       {/* Bottom Description */}
-      <motion.div variants={slideInFromLeft(0.7)} className="w-full mt-6">
+      {/* Bottom Description */}
+      <motion.div
+        variants={slideInFromLeft(0.7)}
+        initial="hidden"
+        animate="visible"
+        className="w-full mt-6"
+      >
         <p className="text-lg text-gray-400 max-w-[700px] text-center mx-auto leading-relaxed">
           I am Trupesh Mandani, a software developer with skills in mobile app
           development, web development, and software development. Check out my

@@ -9,8 +9,8 @@ const Certification = () => {
       </h1>
       <div className="h-full w-auto flex flex-col md:flex-row gap-10 px-10">
         <CertiCard
-          src="/NextWebsite.png"
-          title="modern Next.js Portfolio"
+          src="/certi1.png"
+          title="Advance React Certification"
           description="lorem ipsum sdkfhjasdehkfjasdf bkh sdkhf kjhsdf kshdf sdkfjg"
         />
         <CertiCard
