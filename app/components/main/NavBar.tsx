@@ -3,6 +3,7 @@
 import { Socials } from "@/app/constants"; // Importing social media links from constants
 import Image from "next/image"; // Importing Image component from Next.js
 import React from "react"; // Importing React
+import DraggableNavBlock from "../sub/DragableNavBlock";
 
 // Functional component for the navigation bar
 const NavBar = () => {
@@ -43,26 +44,8 @@ const NavBar = () => {
         </a>
 
         {/* Navigation links section */}
-        <div className="w-[500px] h-full gap-5 flex flex-row item-center justify-center">
-          <div className="w-[500px] h-full flex flex-row items-center justify-center">
-            <div className="flex flex-row items-center gap-x-6 border border-[#7042f861] bg-[#0300145e] px-[20px] py-[10px] mt-2 rounded-full text-gray-200 whitespace-nowrap">
-              <a href="#About-me" className="cursor-pointer">
-                About me
-              </a>
-              <a href="#Skills" className="cursor-pointer">
-                Skills
-              </a>
-              <a href="#Certifications" className="cursor-pointer">
-                Certifications
-              </a>
-              <a href="#Projects" className="cursor-pointer">
-                Projects
-              </a>
-              <a href="#footer" className="cursor-pointer">
-                Connect Me
-              </a>
-            </div>
-          </div>
+        <div className="justify-center">
+          <DraggableNavBlock scrollToSection={scrollToSection} />
         </div>
 
         {/* Social media icons section */}

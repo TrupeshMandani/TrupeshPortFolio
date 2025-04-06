@@ -36,8 +36,19 @@ const StarBackground = (props: JSX.IntrinsicElements["group"]) => {
 };
 
 const StarCanvas = () => (
-  <div className="h-auto w-full fixed inset-0 z-[20]">
-    <Canvas camera={{ position: [0, 0, 1] }}>
+  <div className="h-auto w-full fixed inset-0 z-[0]">
+    <Canvas
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        zIndex: -1,
+        pointerEvents: "none",
+        width: "100%",
+        height: "100%",
+      }}
+      camera={{ position: [0, 0, 1] }}
+    >
       <Suspense fallback={null}>
         <StarBackground />
       </Suspense>
