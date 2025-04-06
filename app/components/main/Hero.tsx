@@ -9,7 +9,7 @@ const Hero = () => {
         muted
         loop
         playsInline
-        className="rotate-180 absolute top-[-340px] left-0 w-full h-full z-[-1] object-cover"
+        className="rotate-180 absolute top-[-375px] left-0 w-full h-full z-[-1] object-cover"
       >
         <source src="/blackhole.webm" type="video/webm" />
         <source src="/blackhole.mp4" type="video/mp4" /> {/* Fallback format */}

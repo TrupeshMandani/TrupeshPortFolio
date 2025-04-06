@@ -16,7 +16,7 @@
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "devicon": "^2.16.0",
-    "framer-motion": "^12.0.5",
+    "framer-motion": "^12.6.3",
     "lucide-react": "^0.483.0",
     "next": "14.2.14",
     "react": "^18",
@@ -24,6 +24,8 @@
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.13.1",
     "react-speech-kit": "^3.0.1",
+    "react-spring": "^9.7.5",
+    "react-tilt": "^1.0.2",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.171.0"

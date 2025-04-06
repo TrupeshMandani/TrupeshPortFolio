@@ -1,112 +1,120 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
-import { SparklesIcon, SpeakerWaveIcon } from "@heroicons/react/16/solid";
 import Image from "next/image";
+import { SpeakerWaveIcon } from "@heroicons/react/16/solid";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 
 const Herocontent = () => {
-  const headingRef = useRef<HTMLDivElement>(null);
-  const descRef = useRef<HTMLParagraphElement>(null);
+  const plateRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio("/trupesh-mandani.mp3");
+    audioRef.current.load(); // Preload
+  }, []);
 
   const speakContent = () => {
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      const headingText = headingRef.current?.innerText || "";
-      const descText = descRef.current?.innerText || "";
-      const fullText = `${headingText}. ${descText}`;
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play();
+    }
+  };
 
-      const utterance = new SpeechSynthesisUtterance(fullText);
-      utterance.lang = "en-US";
-      utterance.rate = 1;
-      window.speechSynthesis.cancel(); // Stop existing speech
-      window.speechSynthesis.speak(utterance);
-    } else {
-      alert("Sorry, your browser doesn't support text-to-speech.");
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>,
+    targetRef: React.RefObject<HTMLDivElement>
+  ) => {
+    const el = targetRef.current;
+    if (!el) return;
+
+    const { left, top, width, height } = el.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    const rotateX = y * -15;
+    const rotateY = x * 25;
+
+    el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+  };
+
+  const resetTilt = (targetRef: React.RefObject<HTMLDivElement>) => {
+    if (targetRef.current) {
+      targetRef.current.style.transform =
+        "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)";
     }
   };
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-row items-center justify-between px-20 mt-40 w-full"
-    >
-      {/* Left Section */}
-      <div className="h-full w-full flex flex-col gap-5 justify-center text-start">
-        {/* Welcome Box */}
-        <motion.div
-          variants={slideInFromTop}
-          className="welcome-box py-2 px-7 border border-[#7042f88b] rounded-full max-w-max opacity-[0.9] mt-[-20px] flex items-center gap-2"
-        >
-          <SparklesIcon className="text-[#b49bff] h-5 w-5" />
-          <h1 className="welcome-text text-[13px] text-white">
-            Full-Stack Developer Portfolio
-          </h1>
-
-          {/* Speaker Button */}
-          <button
-            onClick={speakContent}
-            className="ml-3 z-10 relative bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition cursor-pointer"
-            title="Click to speak"
-          >
-            <SpeakerWaveIcon className="h-5 w-5 text-white pointer-events-none" />
-          </button>
-        </motion.div>
-
-        {/* Main Title */}
+    <div className="min-h-screen flex flex-col justify-center items-center overflow-hidden px-4 md:px-20">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        className="flex flex-row items-center justify-between w-full"
+      >
+        {/* Left Section */}
         <motion.div
           variants={slideInFromLeft(0.5)}
-          ref={headingRef}
-          className="flex flex-col gap-6 mt-3 text-6xl font-bold text-white max-w-[600px]"
+          className="w-1/2 h-full flex flex-col justify-center text-center"
         >
-          <span>
-            Providing
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-100">
-              {" "}
-              The best{" "}
-            </span>
-            Project Experience
-          </span>
+          <div
+            ref={plateRef}
+            onMouseMove={(e) => handleMouseMove(e, plateRef)}
+            onMouseLeave={() => resetTilt(plateRef)}
+            className="transition-transform duration-150 ease-out will-change-transform py-20 px-10 rounded-xl hover:bg-white/5"
+          >
+            <p className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-wide cursor-default leading-tight pb-10 uppercase flex flex-col gap-4 justify-center items-center select-none">
+              <span className="relative flex hover:tracking-widest transition-all ease-in-out duration-500 cursor-crosshair">
+                {/* Speaker Button on 'h' */}
+                <button
+                  onClick={speakContent}
+                  className="absolute -top-10 right-[-12px] z-10 bg-white bg-opacity-20 p-2 rounded-full hover:bg-opacity-30 transition cursor-pointer"
+                  title="Click to speak"
+                >
+                  <SpeakerWaveIcon className="h-5 w-5 text-white pointer-events-none" />
+                </button>
+
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-100">
+                  Trupesh
+                </span>
+              </span>
+              <span className="text-gray-400">Mandani</span>
+            </p>
+          </div>
         </motion.div>
 
-        {/* Description */}
-        <motion.p
-          variants={slideInFromLeft(0.8)}
-          ref={descRef}
-          className="text-lg text-gray-400 max-w-[600px]"
+        {/* Right Section */}
+        <motion.div
+          variants={slideInFromRight(0.5)}
+          className="w-1/2 h-full flex justify-center items-center"
         >
+          <div
+            ref={imageRef}
+            onMouseMove={(e) => handleMouseMove(e, imageRef)}
+            onMouseLeave={() => resetTilt(imageRef)}
+            className="transition-transform duration-150 ease-out will-change-transform p-6 rounded-xl"
+          >
+            <Image
+              src="/mainIconsdark.svg"
+              alt="work icons"
+              height={650}
+              width={650}
+              className="object-contain"
+            />
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Bottom Description */}
+      <motion.div variants={slideInFromLeft(0.7)} className="w-full mt-6">
+        <p className="text-lg text-gray-400 max-w-[700px] text-center mx-auto leading-relaxed">
           I am Trupesh Mandani, a software developer with skills in mobile app
           development, web development, and software development. Check out my
           skills and projects below.
-        </motion.p>
-
-        {/* Learn More Button */}
-        <motion.a
-          variants={slideInFromLeft(1)}
-          className="py-2 bg-purple-500 bg-opacity-30 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
-        >
-          Learn More
-        </motion.a>
-      </div>
-
-      {/* Right Section: Image */}
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-end items-center"
-      >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-        />
+        </p>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
