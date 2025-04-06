@@ -36,7 +36,7 @@ const StarBackground = (props: JSX.IntrinsicElements["group"]) => {
 };
 
 const StarCanvas = () => (
-  <div className="h-auto w-full fixed inset-0 z-[0]">
+  <div className="h-auto w-full fixed inset-0 z-[-1]">
     <Canvas
       style={{
         position: "absolute",
