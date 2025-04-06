@@ -76,7 +76,7 @@ const Projects = () => {
 
         {/* E-commerce Book Store */}
         <ProjectCard
-          src="/proj3.png"
+          src="/BookStoreMern.png"
           title="E-commerce Book Store"
           description="A modern MERN-based e-commerce platform with React, Vite, RESTful APIs, and MongoDB integration to provide users a seamless shopping experience."
           techStack={[

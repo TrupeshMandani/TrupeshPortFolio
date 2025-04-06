@@ -11,12 +11,22 @@ export default function Home() {
     <main className="h-full w-full">
       {" "}
       {/* // Main container */}
-      <div className="flex flex-col  gap-20">
-        <Hero />
-        <Skill />
-        <Certification />
-        <Projects />
-        <Footer />
+      <div className="flex flex-col gap-20">
+        <section id="about-me">
+          <Hero />
+        </section>
+        <section id="skills">
+          <Skill />
+        </section>
+        <section id="certifications">
+          <Certification />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
       </div>
     </main>
   );
