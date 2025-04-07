@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -110,7 +110,7 @@ const Footer = () => {
           <h2 className="text-4xl font-semibold text-white">Connect With Me</h2>
           <div className="flex flex-col space-y-6 text-xl">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/TrupeshMandani"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 text-gray-300 hover:text-white transition-colors"
@@ -119,7 +119,7 @@ const Footer = () => {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/trupeshmandani"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 text-gray-300 hover:text-white transition-colors"
@@ -128,13 +128,13 @@ const Footer = () => {
               LinkedIn
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://instagram.com/trupesh_16"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-5 text-gray-300 hover:text-white transition-colors"
             >
-              <FaTwitter className="text-3xl" />
-              Twitter
+              <FaInstagram className="text-3xl" />
+              Instagram
             </a>
             <a
               href="mailto:your.email@example.com"

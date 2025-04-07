@@ -1,16 +1,14 @@
 "use client";
 
-import { Socials } from "@/app/constants"; // Importing social media links from constants
-import Image from "next/image"; // Importing Image component from Next.js
-import React from "react"; // Importing React
+import React from "react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import DraggableNavBlock from "../sub/DragableNavBlock";
 
-// Functional component for the navigation bar
 const NavBar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbarHeight = 65; // Height of the navbar
+      const navbarHeight = 65;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition =
         elementPosition + window.pageYOffset - navbarHeight;
@@ -24,30 +22,45 @@ const NavBar = () => {
 
   return (
     <div className="w-full h-[65px] font-bold fixed top-0 z-50 px-10">
-      {/* Container for the navigation bar */}
-      <div className="w-full h-full flex flex-row px-10px m-auto justify-between items-center">
-        {/* Logo section */}
-
-        {/* Navigation links section */}
+      <div className="w-full h-full flex flex-row justify-between items-center">
+        {/* Navigation links */}
         <div className="justify-center">
           <DraggableNavBlock scrollToSection={scrollToSection} />
         </div>
 
-        {/* Social media icons section */}
-        <div className="flex flex-row gap-7">
-          {Socials.map((social) => (
-            <Image
-              src={social.src} // Source of the social media icon
-              alt={social.name} // Alt text for accessibility
-              key={social.name} // Unique key for each element
-              width={40} // Width of the icon
-              height={40} // Height of the icon
-            />
-          ))}
+        {/* Social Buttons */}
+        <div className="flex gap-6 text-white text-xl">
+          <a
+            href="https://github.com/TrupeshMandani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-purple-500 transition"
+            title="GitHub"
+          >
+            <FaGithub className="w-6 h-6" />
+          </a>
+          <a
+            href="https://linkedin.com/in/trupeshmandani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition"
+            title="LinkedIn"
+          >
+            <FaLinkedin className="w-6 h-6" />
+          </a>
+          <a
+            href="https://instagram.com/trupesh_16"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-400 transition"
+            title="Instagram"
+          >
+            <FaInstagram className="w-6 h-6" />
+          </a>
         </div>
       </div>
     </div>
   );
 };
 
-export default NavBar; // Exporting the NavBar component
+export default NavBar;
