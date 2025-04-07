@@ -24,7 +24,7 @@ export default function Home() {
         <section id="projects">
           <Projects />
         </section>
-        <section id="footer">
+        <section id="footer" className="min-h-screen">
           <Footer />
         </section>
       </div>

@@ -1,8 +1,13 @@
+// ProjectCard.tsx
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { EyeIcon } from "@heroicons/react/24/outline";
+import { FaGithub } from "react-icons/fa";
 
 interface TechStack {
-  src: string; // Updated to use an image link
+  src: string;
   label: string;
 }
 
@@ -11,11 +16,20 @@ interface Props {
   title: string;
   description: string;
   techStack: TechStack[];
+  githubLink: string;
+  liveLink: string;
 }
 
-const ProjectCard = ({ src, title, description, techStack }: Props) => {
+const ProjectCard = ({
+  src,
+  title,
+  description,
+  techStack,
+  githubLink,
+  liveLink,
+}: Props) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] bg-transparent backdrop-blur-md">
+    <div className="relative group overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] bg-transparent backdrop-blur-md transition duration-300 hover:brightness-75">
       {/* Image Section */}
       <div className="relative w-full h-56">
         <Image
@@ -26,14 +40,33 @@ const ProjectCard = ({ src, title, description, techStack }: Props) => {
           style={{ objectFit: "cover" }}
           className="rounded-t-lg"
         />
+
+        {/* Hover Overlay Icons */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center gap-6 transition duration-300">
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition"
+            title="View GitHub"
+          >
+            <FaGithub className="w-6 h-6" />
+          </a>
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white bg-gray-800 p-3 rounded-full hover:bg-gray-700 "
+            title="Live Demo"
+          >
+            <EyeIcon className="w-6 h-6" />
+          </a>
+        </div>
       </div>
 
       {/* Content Section */}
       <div className="p-6">
-        {/* Title */}
         <h1 className="text-2xl font-semibold text-white mb-2">{title}</h1>
-
-        {/* Description */}
         <p className="text-gray-300 mb-4">{description}</p>
 
         {/* Tech Stack */}
@@ -43,10 +76,12 @@ const ProjectCard = ({ src, title, description, techStack }: Props) => {
               key={index}
               className="flex items-center gap-2 bg-gray-700/70 p-2 rounded-full shadow-md"
             >
-              <img
+              <Image
                 src={tech.src}
                 alt={tech.label}
-                className="w-6 h-6 object-contain"
+                width={24}
+                height={24}
+                className="object-contain"
               />
               <span className="text-sm text-gray-300">{tech.label}</span>
             </div>

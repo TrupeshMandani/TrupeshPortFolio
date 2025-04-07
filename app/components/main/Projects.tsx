@@ -1,3 +1,6 @@
+// Projects.tsx
+"use client";
+
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
 
@@ -16,16 +19,17 @@ const Projects = () => {
           src="/proj1.png"
           title="Calgary Chauffeur Service"
           description="A responsive booking website for chauffeur services with advanced search, Google API integration, Square payment gateway, and RESTful APIs for smooth functionality."
+          githubLink="https://github.com/TrupeshMandani/calgarychauffeurservices"
+          liveLink="https://calgarychauffeurservice.com"
           techStack={[
             {
               src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
               label: "Next.js",
             },
             {
-              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
               label: "Tailwind CSS",
             },
-
             {
               src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
               label: "MongoDB",
@@ -50,6 +54,8 @@ const Projects = () => {
           src="/proj2.png"
           title="BookView"
           description="A platform to download and purchase books through Amazon. Features Firebase authentication, a real-time Firebase database, Google API, and RESTful APIs for seamless book access."
+          githubLink="https://github.com/TrupeshMandani/BookView"
+          liveLink="https://book-review-app-gold.vercel.app"
           techStack={[
             {
               src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
@@ -60,7 +66,7 @@ const Projects = () => {
               label: "Firebase",
             },
             {
-              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
               label: "Tailwind CSS",
             },
             {
@@ -79,6 +85,8 @@ const Projects = () => {
           src="/BookStoreMern.png"
           title="E-commerce Book Store"
           description="A modern MERN-based e-commerce platform with React, Vite, RESTful APIs, and MongoDB integration to provide users a seamless shopping experience."
+          githubLink="https://github.com/TrupeshMandani/Book-store-MERN"
+          liveLink="https://book-store-mern-sage.vercel.app"
           techStack={[
             {
               src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
@@ -93,7 +101,7 @@ const Projects = () => {
               label: "MongoDB",
             },
             {
-              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", // Tailwind CSS Icon
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
               label: "Tailwind CSS",
             },
             {

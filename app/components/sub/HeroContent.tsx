@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { SpeakerWaveIcon } from "@heroicons/react/16/solid";
 import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
@@ -11,9 +11,36 @@ const Herocontent = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Add this array at the top inside the component
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const translations = [
+    "Mandani", // English
+    "मंडानी", // Hindi (Devanagari)
+    "مندنی", // Urdu/Arabic
+    "マンダニ", // Japanese (Katakana)
+    "만다니", // Korean
+    "Мандани", // Russian (Cyrillic)
+    "மண்டானி", // Tamil
+  ];
+  const fadeVariant = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 },
+  };
+
+  const [currentTranslation, setCurrentTranslation] = useState(translations[0]);
+
   useEffect(() => {
     audioRef.current = new Audio("/trupesh-mandani.mp3");
     audioRef.current.load(); // Preload
+    let index = 0;
+    const interval = setInterval(() => {
+      index = (index + 1) % translations.length;
+      setCurrentTranslation(translations[index]);
+    }, 2500); // Changes every 2.5 seconds
+
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const speakContent = () => {
@@ -63,7 +90,7 @@ const Herocontent = () => {
               ref={plateRef}
               onMouseMove={(e) => handleMouseMove(e, plateRef)}
               onMouseLeave={() => resetTilt(plateRef)}
-              className=" w-full flex items-center justify-center transition-transform py-40 duration-150 ease-out will-change-transform px-10 rounded-xl hover:bg-white/5 "
+              className=" w-full  flex items-center justify-center transition-transform py-40 duration-150 ease-out will-change-transform rounded-xl "
             >
               <p className="text-6xl sm:text-7xl md:text-9xl font-bold tracking-wide cursor-default leading-tight pb-10 uppercase flex flex-col gap-4 justify-center items-center select-none">
                 <span className="relative flex hover:tracking-widest transition-all ease-in-out duration-500 cursor-crosshair">
@@ -79,7 +106,19 @@ const Herocontent = () => {
                     Trupesh
                   </span>
                 </span>
-                <span className="text-gray-400">Mandani</span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentTranslation}
+                    variants={fadeVariant}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.5 }}
+                    className="text-gray-400"
+                  >
+                    {currentTranslation}
+                  </motion.span>
+                </AnimatePresence>
               </p>
             </div>
           </div>
