@@ -13,43 +13,43 @@ const Projects = () => {
       </h1>
 
       {/* Projects List */}
-      {/* Diamond Management System */}
-      <ProjectCard
-        src="/proj4.png"
-        title="Diamond Management System"
-        description="A comprehensive MERN stack application for managing diamond workflow, sales, and customer relationships. Features include real-time tracking, analytics, and secure authentication."
-        githubLink="https://github.com/TrupeshMandani/DiamondsOperating"
-        liveLink="https://diamondmanagment.vercel.app/Pages/login"
-        isRealLife={true}
-        techStack={[
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            label: "React.js",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            label: "Express.js",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            label: "MongoDB",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            label: "Node.js",
-          },
-          {
-            src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
-            label: "Tailwind CSS",
-          },
-          {
-            src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            label: "REST APIs",
-          },
-        ]}
-      />
 
       <div className="h-full w-auto flex flex-col md:flex-row gap-10 px-10">
+        {/* Diamond Management System */}
+        <ProjectCard
+          src="/proj4.png"
+          title="Diamond Management System"
+          description="A comprehensive MERN stack application for managing diamond workflow, sales, and customer relationships. Features include real-time tracking, analytics, and secure authentication."
+          githubLink="https://github.com/TrupeshMandani/DiamondsOperating"
+          liveLink="https://diamondmanagment.vercel.app/Pages/login"
+          isRealLife={true}
+          techStack={[
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+              label: "React.js",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+              label: "Express.js",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+              label: "MongoDB",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+              label: "Node.js",
+            },
+            {
+              src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+              label: "Tailwind CSS",
+            },
+            {
+              src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+              label: "REST APIs",
+            },
+          ]}
+        />
         {/* Chauffeur Service */}
         <ProjectCard
           src="/proj1.png"
