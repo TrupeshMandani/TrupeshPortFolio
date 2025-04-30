@@ -17,7 +17,7 @@ const Projects = () => {
       <div className="h-full w-auto flex flex-col md:flex-row gap-10 px-10">
         {/* Diamond Management System */}
         <ProjectCard
-          src="/proj4.png"
+          src="/Proj4.png"
           title="Diamond Management System"
           description="A comprehensive MERN stack application for managing diamond workflow, sales, and customer relationships. Features include real-time tracking, analytics, and secure authentication."
           githubLink="https://github.com/TrupeshMandani/DiamondsOperating"
