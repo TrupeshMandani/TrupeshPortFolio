@@ -18,6 +18,7 @@ interface Props {
   techStack: TechStack[];
   githubLink: string;
   liveLink: string;
+  isRealLife?: boolean;
 }
 
 const ProjectCard = ({
@@ -27,9 +28,17 @@ const ProjectCard = ({
   techStack,
   githubLink,
   liveLink,
+  isRealLife = false,
 }: Props) => {
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] bg-transparent backdrop-blur-md transition duration-300 hover:brightness-75">
+      {/* Real Life Project Tag */}
+      {isRealLife && (
+        <div className="absolute top-2 right-2 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+          Real Life Project
+        </div>
+      )}
+
       {/* Image Section */}
       <div className="relative w-full h-56">
         <Image
