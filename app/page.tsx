@@ -8,23 +8,23 @@ import Skill from "./components/main/Skill";
 
 export default function Home() {
   return (
-    <main className="h-full w-full">
+    <main className="h-full w-full overflow-y-auto snap-y snap-mandatory">
       {" "}
       {/* // Main container */}
-      <div className="flex flex-col gap-20">
-        <section id="about-me">
+      <div className="flex flex-col">
+        <section id="about-me" className="snap-start">
           <Hero />
         </section>
-        <section id="skills">
+        <section id="skills" className="snap-start">
           <Skill />
         </section>
-        <section id="certifications">
+        <section id="certifications" className="snap-start">
           <Certification />
         </section>
-        <section id="projects">
+        <section id="projects" className="snap-start">
           <Projects />
         </section>
-        <section id="footer" className="min-h-screen">
+        <section id="footer" className="min-h-screen snap-start">
           <Footer />
         </section>
       </div>

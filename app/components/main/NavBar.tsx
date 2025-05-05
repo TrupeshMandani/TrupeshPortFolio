@@ -30,7 +30,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="w-full h-[65px] font-bold fixed top-0 z-50 px-4 md:px-10 bg-black/50 backdrop-blur-sm">
+    <div className="w-full h-[65px] font-bold fixed top-0 z-50 px-4 md:px-10 bg-transparent backdrop-blur-sm">
       <div className="w-full h-full flex flex-row justify-between items-center">
         {/* Navigation links */}
         <div className="hidden md:flex justify-center">

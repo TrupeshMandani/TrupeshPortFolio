@@ -9,10 +9,10 @@ const Skill = () => {
     <section
       id="skills"
       style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-5"
+      className="flex flex-col items-center justify-center gap-3 h-screen relative overflow-hidden py-5 snap-start"
     >
       <SkillText />
-      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4 ">
+      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4">
         {Skill_data.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -24,7 +24,7 @@ const Skill = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4 ">
+      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4">
         {Backend_skill.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -35,7 +35,7 @@ const Skill = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4 ">
+      <div className="flex flex-row justify-around gap-2 items-center flex-wrap mt-4">
         {Full_stack.map((image, index) => (
           <SkillDataProvider
             key={index}
